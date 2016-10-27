@@ -1,0 +1,57 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for myself",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development node dev-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SecretBase/react-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "hot-loading",
+    "css-modules"
+  ],
+  "author": "Ki-Hong Chan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SecretBase/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/SecretBase/react-boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "babel-core": "^6.18.0",
+    "babel-jest": "^16.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-react-app": "^1.0.0",
+    "bootstrap": "4.0.0-alpha.5",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.8.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-loader": "^1.6.0",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-react": "^6.4.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "html-webpack-plugin": "^2.24.0",
+    "jest": "^16.0.2",
+    "node-sass": "^3.10.1",
+    "normalize.css": "^5.0.0",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^1.0.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
