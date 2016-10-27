@@ -1,0 +1,11 @@
+{
+  "moduleFileExtensions": [
+    "jsx",
+    "js",
+    "json"
+  ],
+  "moduleNameMapper": {
+    "^.*\\.(css|scss|sass)$": "identity-obj-proxy"
+  },
+  "testEnvironment": "node"
+}
