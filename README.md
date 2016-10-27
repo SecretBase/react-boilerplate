@@ -34,7 +34,10 @@ There should more good way to define global style in css modules.
 
 Using `identity-obj-proxy` to proxy classname to snapshot.
 
+[Write test for React by using snapshot](http://facebook.github.io/jest/docs/tutorial-react.html#content)
+
 [Jest Webpack tutorial](http://facebook.github.io/jest/docs/tutorial-webpack.html#content)
+
 [identity-obj-proxy](https://github.com/keyanzhang/identity-obj-proxy)
 
 ### Command
