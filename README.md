@@ -37,5 +37,6 @@ There should more good way to define global style in css modules.
 - [ ] Webpack config for production.
 - [ ] Write some tests by using jest for boilerplate reference.
 - [ ] Add Flow for static type checking.
-- [ ] Add eslint plugin jsx ally.
+- [ ] Add eslint-plugin-jsx-ally.
 - [ ] Find a good way to separate global and local style in css modules.
+- [ ] Common code splitting.
