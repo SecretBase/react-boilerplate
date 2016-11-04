@@ -1,7 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import './global.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/test.css'
+
+import './globalStyle/global.scss'
 
 import App from './App'
 

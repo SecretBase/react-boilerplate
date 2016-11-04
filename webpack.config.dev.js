@@ -26,7 +26,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint',
-        exclude: /node_modules/
+        include: path.resolve(__dirname, 'src')
       }
     ],
     loaders: [
@@ -36,12 +36,23 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /.scss$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap!postcss!sass'
+        test: /\.(scss|css)$/,
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash:base64:5]&sourceMap!postcss!sass',
+        exclude: /(node_modules|globalStyle)/
+      }
+    ],
+    postLoaders: [
+      // This is loader for the global that user defined so only work in globalStyle folder
+      {
+        test: /\.scss$/,
+        loader: 'style!css?sourceMap!postcss!sass',
+        include: /(node_modules|globalStyle)/
       },
+      // Global style from node_modules and globalStyle folder
       {
         test: /\.css$/,
-        loader: 'style!css?sourceMap'
+        loader: 'style!css?sourceMap',
+        include: /(node_modules|globalStyle)/
       }
     ]
   },
