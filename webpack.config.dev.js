@@ -12,10 +12,10 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '/build'),
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
-    filename: './build/static/js/bundle.js',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   resolve: {
