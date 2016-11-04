@@ -36,8 +36,17 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /.scss$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap!postcss!sass'
+        test: /\.(scss|css)$/,
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash:base64:5]&sourceMap!postcss!sass',
+        exclude: /(node_modules|globalStyle)/
+      }
+    ],
+    postLoaders: [
+      // This is loader for the global that user defined so only work in "globoalStyle" folder
+      {
+        test: /\.scss$/,
+        loader: 'style!css?sourceMap!postcss!sass',
+        include: /globalStyle/
       },
       {
         test: /\.css$/,
