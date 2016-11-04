@@ -42,15 +42,17 @@ module.exports = {
       }
     ],
     postLoaders: [
-      // This is loader for the global that user defined so only work in "globoalStyle" folder
+      // This is loader for the global that user defined so only work in globalStyle folder
       {
         test: /\.scss$/,
         loader: 'style!css?sourceMap!postcss!sass',
-        include: /globalStyle/
+        include: /(node_modules|globalStyle)/
       },
+      // Global style from node_modules and globalStyle folder
       {
         test: /\.css$/,
-        loader: 'style!css?sourceMap'
+        loader: 'style!css?sourceMap',
+        include: /(node_modules|globalStyle)/
       }
     ]
   },
