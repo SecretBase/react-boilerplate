@@ -1,0 +1,12 @@
+@import '../../color-palette.scss';
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+ background-color: green;
+ color: $color-white;
+ margin-bottom: 10px;
+}

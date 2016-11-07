@@ -22,11 +22,11 @@ node.js v6.\*+
 
 ### CSS
 
-- Sass for local style
-- Css for global style
-- bootstrap as foundation
-
-There should more good way to define global style in css modules.
+- Support Sass for style.
+- CSS Modules enabled by default.
+- If you have some global style please put that in `src/globalStyle` directory. CSS Modules exclude the style come from there.
+- Styles from `node_modules` also exclude to CSS Modules.
+- Auto BEM class naming.
 
 ### Testing
 
