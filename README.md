@@ -54,5 +54,5 @@ Using `identity-obj-proxy` to proxy classname to snapshot.
 - [x] Write some tests by using jest for boilerplate reference.
 - [ ] Add Flow for static type checking.
 - [ ] Add eslint-plugin-jsx-ally.
-- [ ] Find a good way to separate global and local style in css modules.
+- [x] Find a good way to separate global and local style in css modules.
 - [ ] Common code splitting.
