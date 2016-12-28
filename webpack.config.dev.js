@@ -7,14 +7,11 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: [
+      'babel-polyfill',
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
       'react-hot-loader/patch',
       './src/index.js'
-    ],
-    vendor: [
-      'react',
-      'react-dom'
     ]
   },
   output: {
@@ -66,20 +63,17 @@ module.exports = {
     return [
       autoprefixer({
         browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9'
+          '>1%'
         ]
       })
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: '[name].js',
-      minChunks: Infinity
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   filename: '[name].js',
+    //   minChunks: Infinity
+    // }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),

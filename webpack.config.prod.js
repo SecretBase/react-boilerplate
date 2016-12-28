@@ -7,11 +7,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     app: [
+      'babel-polyfill',
       './src/index.js'
-    ],
-    vendor: [
-      'react',
-      'react-dom'
     ]
   },
   output: {
@@ -58,20 +55,17 @@ module.exports = {
     return [
       autoprefixer({
         browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9'
+          '>1%'
         ]
       })
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: '[name]-[chunkhash].js',
-      minChunks: Infinity
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   filename: '[name]-[chunkhash].js',
+    //   minChunks: Infinity
+    // }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
@@ -80,7 +74,8 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
+      },
+      comments: false
     }),
     new ExtractTextPlugin('styles-[contenthash].css'),
     // This is necessary to emit hot updates (currently CSS only):

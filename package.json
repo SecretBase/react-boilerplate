@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development node dev-server.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --process",
-    "test": "jest --config jest.config.json"
+    "build": "cross-env NODE_ENV=production npm run clean && webpack --config webpack.config.prod.js --process",
+    "test": "jest --config jest.config.json",
+    "clean": "rimraf build"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "react-dom": "^15.4.1",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "^15.3.2",
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
