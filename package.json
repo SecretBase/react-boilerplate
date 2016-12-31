@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node dev-server.js",
     "build": "cross-env NODE_ENV=production npm run clean && webpack --config webpack.config.prod.js --process",
-    "test": "jest --config jest.config.json --watch",
+    "test": "jest --config jest.config.json",
     "clean": "rimraf build"
   },
   "repository": {
