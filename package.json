@@ -45,7 +45,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^18.0.0",
+    "jest": "^18.1.0",
     "node-sass": "^4.1.1",
     "normalize.css": "^5.0.0",
     "postcss-import": "^9.0.0",
