@@ -7,5 +7,7 @@
   "moduleNameMapper": {
     "^.*\\.(css|scss|sass)$": "identity-obj-proxy"
   },
-  "testEnvironment": "node"
+  "testEnvironment": "node",
+  "coverageDirectory": "./coverage/",
+  "collectCoverage": true
 }
