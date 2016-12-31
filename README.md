@@ -1,4 +1,5 @@
-# React Boilerplate &middot; [![Build Status](https://travis-ci.org/SecretBase/react-boilerplate.svg?branch=master)](https://travis-ci.org/SecretBase/react-boilerplate)
+# React Boilerplate &middot; [![Build Status](https://travis-ci.org/SecretBase/react-boilerplate.svg?branch=master)](https://travis-ci.org/SecretBase/react-boilerplate) [![codecov](https://codecov.io/gh/SecretBase/react-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/SecretBase/react-boilerplate)
+
 
 Boilerplate for myself.
 
