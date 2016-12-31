@@ -1,9 +1,10 @@
-[![Build Status](https://travis-ci.org/SecretBase/react-boilerplate.svg?branch=master)](https://travis-ci.org/SecretBase/react-boilerplate)
-
 # React Boilerplate
+
 Boilerplate for myself.
 
 Please go and use create-react-app. much better.
+
+[![Build Status](https://travis-ci.org/SecretBase/react-boilerplate.svg?branch=master)](https://travis-ci.org/SecretBase/react-boilerplate)
 
 ### Node
 
