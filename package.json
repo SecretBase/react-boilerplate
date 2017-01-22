@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/SecretBase/react-boilerplate#readme",
   "devDependencies": {
-    "autoprefixer": "^6.6.1",
+    "autoprefixer": "^6.7.0",
     "babel-core": "^6.21.0",
     "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
