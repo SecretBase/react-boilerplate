@@ -7,10 +7,10 @@ new WebpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
   contentBase: './public',
-  stats: 'error-only',
+  stats: 'normal',
   watchOptions: {
     ignored: /node_modules/
-  },
+  }
 }).listen(3000, 'localhost', function (err, result) {
   if (err) {
     return console.log(err)
