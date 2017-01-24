@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-var autoprefixer = require('autoprefixer')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -22,58 +21,83 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx', '']
+    extensions: ['.js', '.json', '.jsx']
   },
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'eslint',
+        use: [
+          'eslint-loader'
+        ],
+        enforce: 'pre',
         include: path.resolve(__dirname, 'src')
-      }
-    ],
-    loaders: [
+      },
       {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
-        loader: 'babel'
+        use: [
+          'babel-loader'
+        ]
       },
       {
         test: /\.(scss|css)$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash:base64:5]&sourceMap!postcss!sass',
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]-[hash:base64:5]',
+              sourceMap: true
+            }
+          },
+          {loader: 'postcss-loader'},
+          {
+            loader: 'sass-loader'
+          }
+        ],
         exclude: /(node_modules|globalStyle)/
-      }
-    ],
-    postLoaders: [
+      },
       // This is loader for the global that user defined so only work in globalStyle folder
       {
         test: /\.scss$/,
-        loader: 'style!css?sourceMap!postcss!sass',
+        enforce: 'post',
+        use: [
+          {loader: 'style-loader'},
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {loader: 'postcss-loader'},
+          {loader: 'sass-loader'}
+        ],
         include: /(node_modules|globalStyle)/
       },
       // Global style from node_modules and globalStyle folder
       {
         test: /\.css$/,
-        loader: 'style!css?sourceMap!postcss',
+        enforce: 'post',
+        use: [
+          {loader: 'style-loader'},
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {loader: 'postcss-loader'}
+        ],
         include: /(node_modules|globalStyle)/
       }
     ]
   },
-  postcss: function () {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%'
-        ]
-      })
-    ]
-  },
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   filename: '[name].js',
-    //   minChunks: Infinity
-    // }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),

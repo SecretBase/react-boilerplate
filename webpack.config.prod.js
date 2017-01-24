@@ -1,8 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
-var autoprefixer = require('autoprefixer')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: {
@@ -18,63 +18,50 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx', '']
+    extensions: ['.js', '.json', '.jsx']
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
-        loader: 'babel'
+        use: ['babel-loader']
       },
       {
         test: /\.(scss|css)$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css?modules&minimize&importLoaders=1!postcss!sass'
-        ),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?modules&minimize&importLoaders=1!postcss-loader!sass-loader'
+        }),
         exclude: /(node_modules|globalStyle)/
-      }
-    ],
-    postLoaders: [
+      },
       // This is loader for the global that user defined so only work in globalStyle folder
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', '!css?minimize?sourceMap!postcss!sass'),
+        enforce: 'post',
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?minimize?sourceMap!postcss-loader!sass-loader'
+        }),
         include: /(node_modules|globalStyle)/
       },
       // Global style from node_modules and globalStyle folder
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css?minimize!postcss'),
+        enforce: 'post',
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?minimize?sourceMap!postcss-loader'
+        }),
         include: /(node_modules|globalStyle)/
       }
     ]
   },
-  postcss: function () {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%'
-        ]
-      })
-    ]
-  },
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   filename: '[name]-[chunkhash].js',
-    //   minChunks: Infinity
-    // }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
       comments: false
     }),
     new ExtractTextPlugin('styles-[contenthash].css'),
@@ -82,6 +69,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: './public/index.html'
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 }
