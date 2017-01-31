@@ -1,5 +1,7 @@
 # React Boilerplate &middot; [![Build Status](https://travis-ci.org/SecretBase/react-boilerplate.svg?branch=master)](https://travis-ci.org/SecretBase/react-boilerplate) [![codecov](https://codecov.io/gh/SecretBase/react-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/SecretBase/react-boilerplate)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SecretBase/react-boilerplate.svg)](https://greenkeeper.io/)
+
 
 Boilerplate for myself.
 
