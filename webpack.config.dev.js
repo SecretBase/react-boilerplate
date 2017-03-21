@@ -103,6 +103,7 @@ module.exports = {
     }),
     // This is necessary to emit hot updates (currently CSS only):
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: './public/index.html'
