@@ -41,7 +41,7 @@
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.1.0",
-    "eslint-config-standard-react": "^4.3.0",
+    "eslint-config-standard-react": "^5.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-promise": "^3.5.0",
