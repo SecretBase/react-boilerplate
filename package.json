@@ -4,8 +4,10 @@
   "description": "Boilerplate for myself",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node dev-server.js",
-    "build": "cross-env NODE_ENV=production npm run clean && webpack --config webpack.config.prod.js --progress",
+    "start": "cross-env NODE_ENV=production node dev-server.js",
+    "dev": "cross-env NODE_ENV=development node dev-server.js",
+    "build": "cross-env NODE_ENV=production yarn run clean && yarn run build:js",
+    "build:js": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --progress",
     "prepush": "yarn run test:dev",
     "test:dev": "jest --config jest.config.json --maxWorkers 8",
     "test": "jest --config jest.config.json --maxWorkers 1 && codecov",
@@ -64,9 +66,7 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.2",
     "style-loader": "^0.17.0",
-    "styled-components": "^1.4.4",
-    "webpack": "^2.3.3",
-    "webpack-bundle-analyzer": "^2.4.0",
+    "webpack": "^2.4.0",
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
