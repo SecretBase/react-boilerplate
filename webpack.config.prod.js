@@ -2,7 +2,6 @@ var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: {
@@ -12,7 +11,7 @@ module.exports = {
     ]
   },
   output: {
-    path: './build',
+    path: path.resolve(__dirname, 'build'),
     // Add /* filename */ comments to generated require()s in the output.
     filename: '[name]-[chunkhash].js',
     publicPath: '/'
@@ -30,8 +29,8 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader?modules&minimize&importLoaders=1!postcss-loader!sass-loader'
+          fallback: 'style-loader',
+          use: 'css-loader?modules&minimize&importLoaders=1!postcss-loader!sass-loader'
         }),
         exclude: /(node_modules|globalStyle)/
       },
@@ -40,8 +39,8 @@ module.exports = {
         test: /\.scss$/,
         enforce: 'post',
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader?minimize?sourceMap!postcss-loader!sass-loader'
+          fallback: 'style-loader',
+          use: 'css-loader?minimize?sourceMap!postcss-loader!sass-loader'
         }),
         include: /(node_modules|globalStyle)/
       },
@@ -50,8 +49,8 @@ module.exports = {
         test: /\.css$/,
         enforce: 'post',
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader?minimize?sourceMap!postcss-loader'
+          fallback: 'style-loader',
+          use: 'css-loader?minimize?sourceMap!postcss-loader'
         }),
         include: /(node_modules|globalStyle)/
       }
@@ -69,7 +68,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: './public/index.html'
-    }),
-    new BundleAnalyzerPlugin()
+    })
   ]
 }
