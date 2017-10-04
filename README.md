@@ -2,7 +2,7 @@
 
 Boilerplate for myself.
 
-Please go and use create-react-app. much better.
+Please use `create-react-app` instead. Much better.
 
 ### Node
 

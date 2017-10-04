@@ -21,7 +21,7 @@ if (module.hot) {
       <AppContainer>
         <App />
       </AppContainer>,
-       document.getElementById('app')
-     )
+      document.getElementById('app')
+    )
   })
 }
