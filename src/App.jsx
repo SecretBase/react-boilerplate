@@ -1,21 +1,80 @@
-import React, { Component } from 'react'
-import classnames from 'classnames'
-import styles from './App.scss'
+// @flow
+import React, { PureComponent } from 'react'
 
-import UserList from './components/UserList'
+import MoiveList from './components/MoiveList'
+import type {Moives} from './components/MoiveList'
+import Input from './components/Input'
 
-class App extends Component {
+type Props = {}
+type State = {
+  moives: Moives,
+  query: string
+}
+
+export const getMoives = (): Moives => [
+  {
+    name: 'Spider Man',
+    emoji: '🕷 👦🏻'
+  },
+  {
+    name: 'Frozen',
+    emoji: '❄️ 👗'
+  },
+  {
+    name: 'Cars 3',
+    emoji: '🚘 🚘 🚘'
+  },
+  {
+    name: 'Frozen 2',
+    emoji: '❄️ 👗 ✌️'
+  },
+  {
+    name: 'Harry Potter',
+    emoji: '👦🏻 👓 ⚡️'
+  }
+]
+
+class App extends PureComponent<Props, State> {
+  state = {
+    moives: getMoives(),
+    query: ''
+  }
+
+  filterMovies = () => {
+    this.setState(() => {
+      return {
+        moives: getMoives()
+      }
+    })
+  }
+
+  onChange = (event: Event) => {
+    const {target} = event
+    if (!(target instanceof global.HTMLInputElement)) return
+    this.setState(() => {
+      return {
+        query: target.value,
+        moives: getMoives()
+          .filter(moive => moive.name
+            .toLowerCase()
+            .includes(target.value.toLowerCase()))
+      }
+    })
+  }
+
   render () {
-    return (
-      <div>
-        <h1 className={classnames(styles.title, styles['title--blue'], 'text-muted')}>Hello World</h1>
-        <h2 className='h1 title--red'>Heading 2</h2>
-        <h2 className='h2'>Heading 2</h2>
-        <h2 className='h3'>Heading 2</h2>
-        <p className={styles.desscription}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <UserList />
-      </div>
-    )
+    return [
+      <Input
+        onChange={this.onChange}
+        placeholder='Search'
+        key='input'
+        value={this.state.query}
+      />,
+      <MoiveList
+        moives={this.state.moives}
+        key='moiveList'
+      />
+    ]
   }
 }
 

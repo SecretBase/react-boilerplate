@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      'webpack-dev-server/client?http://localhost:3000',
+      'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
       'react-hot-loader/patch',
       './src/index.js'
