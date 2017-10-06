@@ -12,56 +12,48 @@ Array [
     className="sc-htpNat flqtFs"
   >
     <li
-      className="sc-bdVaJa kmQhNa"
+      className="sc-bwzfXH gOqXhy"
     >
-       
       🕷 👦🏻
        
       <span
-        className="sc-bwzfXH hXzJNw"
+        className="sc-bdVaJa KPDKR"
       >
         Spider Man
       </span>
-       
     </li>
     <li
-      className="sc-bdVaJa kmQhNa"
+      className="sc-bwzfXH gOqXhy"
     >
-       
       ❄️ 👗
        
       <span
-        className="sc-bwzfXH hXzJNw"
+        className="sc-bdVaJa KPDKR"
       >
         Frozen
       </span>
-       
     </li>
     <li
-      className="sc-bdVaJa kmQhNa"
+      className="sc-bwzfXH gOqXhy"
     >
-       
       🚘 🚘 🚘
        
       <span
-        className="sc-bwzfXH hXzJNw"
+        className="sc-bdVaJa KPDKR"
       >
         Cars 3
       </span>
-       
     </li>
     <li
-      className="sc-bdVaJa kmQhNa"
+      className="sc-bwzfXH gOqXhy"
     >
-       
       👦🏻 👓 ⚡️
        
       <span
-        className="sc-bwzfXH hXzJNw"
+        className="sc-bdVaJa KPDKR"
       >
         Harry Potter
       </span>
-       
     </li>
   </ul>,
 ]
@@ -82,7 +74,7 @@ exports[`App Component should render a only Cars 3 1`] = `
       value="Cars"
     />
   </styled.input>
-  <MoiveList
+  <Styled(MoiveList)
     key="moiveList"
     moives={
       Array [
@@ -93,40 +85,52 @@ exports[`App Component should render a only Cars 3 1`] = `
       ]
     }
   >
-    <styled.ul>
+    <MoiveList
+      className="sc-htpNat flqtFs"
+      moives={
+        Array [
+          Object {
+            "emoji": "🚘 🚘 🚘",
+            "name": "Cars 3",
+          },
+        ]
+      }
+    >
       <ul
         className="sc-htpNat flqtFs"
       >
-        <MoiveItem
+        <Styled(MoiveItem)
           emoji="🚘 🚘 🚘"
           key="Cars 3"
           name="Cars 3"
         >
-          <styled.li>
+          <MoiveItem
+            className="sc-bwzfXH gOqXhy"
+            emoji="🚘 🚘 🚘"
+            name="Cars 3"
+          >
             <li
-              className="sc-bdVaJa kmQhNa"
+              className="sc-bwzfXH gOqXhy"
             >
-               
               🚘 🚘 🚘
                
               <styled.span>
                 <span
-                  className="sc-bwzfXH hXzJNw"
+                  className="sc-bdVaJa KPDKR"
                 >
                   Cars 3
                 </span>
               </styled.span>
-               
             </li>
-          </styled.li>
-        </MoiveItem>
+          </MoiveItem>
+        </Styled(MoiveItem)>
       </ul>
-    </styled.ul>
-  </MoiveList>
+    </MoiveList>
+  </Styled(MoiveList)>
 </App>
 `;
 
-exports[`App Component should return a list of moives 1`] = `
+exports[`App Component should return a list of movies 1`] = `
 Array [
   Object {
     "emoji": "🕷 👦🏻",

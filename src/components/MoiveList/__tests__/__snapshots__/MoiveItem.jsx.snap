@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoiveItem component should render correctly 1`] = `
+<MoiveItem
+  className="sc-bwzfXH gOqXhy"
+  emoji="World"
+  name="Hello"
+/>
+`;

@@ -5,17 +5,11 @@ import {lighten} from 'polished'
 
 export type Moive = {
   name: string,
-  emoji: string
+  emoji: string,
+  className?: string
 }
 
 type Props = Moive
-
-const Item = styled.li`
-  list-style-type: none;
-  margin-bottom: 16px;
-  font-size: 24px;
-  color: #414042;
-`
 
 const PaleText = styled.span`
   font-size: 16px;
@@ -25,10 +19,17 @@ const PaleText = styled.span`
   }
 `
 
-export default class MoiveItem extends PureComponent<Props> {
+class MoiveItem extends PureComponent<Props> {
   render () {
     return (
-      <Item> {this.props.emoji} <PaleText>{this.props.name}</PaleText> </Item>
+      <li className={this.props.className}>{this.props.emoji} <PaleText>{this.props.name}</PaleText></li>
     )
   }
 }
+
+export default styled(MoiveItem)`
+  list-style-type: none;
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #414042;
+`
