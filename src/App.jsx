@@ -25,10 +25,6 @@ export const getMoives = (): Moives => [
     emoji: '🚘 🚘 🚘'
   },
   {
-    name: 'Frozen 2',
-    emoji: '❄️ 👗 ✌️'
-  },
-  {
     name: 'Harry Potter',
     emoji: '👦🏻 👓 ⚡️'
   }
@@ -41,13 +37,14 @@ class App extends PureComponent<Props, State> {
   }
 
   onChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
+    const {target} = event
     this.setState(() => {
       return {
-        query: event.target.value,
+        query: target.value,
         moives: getMoives()
           .filter(moive => moive.name
             .toLowerCase()
-            .includes(event.target.value.toLowerCase()))
+            .includes(target.value.toLowerCase()))
       }
     })
   }

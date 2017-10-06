@@ -1,5 +1,4 @@
 // @flow
-import React, {PureComponent} from 'react'
 import styled from 'styled-components'
 
 const Input = styled.input`
@@ -12,11 +11,4 @@ const Input = styled.input`
   padding: 8px 16px;
 `
 
-type Props = {}
-
-export default class StyledInput extends PureComponent<Props> {
-  static displayName = 'Input'
-  render () {
-    return <Input {...this.props} />
-  }
-}
+export default Input

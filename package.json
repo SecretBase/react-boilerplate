@@ -9,8 +9,8 @@
     "build": "cross-env NODE_ENV=production yarn run clean && yarn run build:js",
     "build:js": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --progress",
     "prepush": "yarn run test:dev",
-    "test:dev": "jest --config jest.config.json --maxWorkers 8",
-    "test": "jest --config jest.config.json --maxWorkers 1 && codecov",
+    "test:dev": "jest --config jest.config.json",
+    "test": "jest --config jest.config.json && codecov",
     "clean": "rimraf build"
   },
   "repository": {

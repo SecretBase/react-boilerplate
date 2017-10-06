@@ -54,19 +54,6 @@ Array [
       className="sc-bdVaJa kmQhNa"
     >
        
-      ❄️ 👗 ✌️
-       
-      <span
-        className="sc-bwzfXH hXzJNw"
-      >
-        Frozen 2
-      </span>
-       
-    </li>
-    <li
-      className="sc-bdVaJa kmQhNa"
-    >
-       
       👦🏻 👓 ⚡️
        
       <span
@@ -82,25 +69,19 @@ Array [
 
 exports[`App Component should render a only Cars 3 1`] = `
 <App>
-  <Input
+  <styled.input
     key="input"
     onChange={[Function]}
     placeholder="Search"
     value="Cars"
   >
-    <styled.input
+    <input
+      className="sc-bxivhb xxaXh"
       onChange={[Function]}
       placeholder="Search"
       value="Cars"
-    >
-      <input
-        className="sc-bxivhb xxaXh"
-        onChange={[Function]}
-        placeholder="Search"
-        value="Cars"
-      />
-    </styled.input>
-  </Input>
+    />
+  </styled.input>
   <MoiveList
     key="moiveList"
     moives={
@@ -145,7 +126,7 @@ exports[`App Component should render a only Cars 3 1`] = `
 </App>
 `;
 
-exports[`App Component should return a moives list 1`] = `
+exports[`App Component should return a list of moives 1`] = `
 Array [
   Object {
     "emoji": "🕷 👦🏻",
@@ -158,10 +139,6 @@ Array [
   Object {
     "emoji": "🚘 🚘 🚘",
     "name": "Cars 3",
-  },
-  Object {
-    "emoji": "❄️ 👗 ✌️",
-    "name": "Frozen 2",
   },
   Object {
     "emoji": "👦🏻 👓 ⚡️",

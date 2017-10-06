@@ -13,7 +13,7 @@ describe('App Component', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('should return a moives list', () => {
+  it('should return a list of moives', () => {
     expect(getMoives()).toMatchSnapshot()
   })
 
