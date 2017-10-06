@@ -1,27 +1,20 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import 'normalize.css/normalize.css'
-
-import './globalStyle/global.scss'
 
 import App from './App'
 
-render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
-  document.getElementById('app')
-)
+const main = MainApp => {
+  render(
+    <AppContainer>
+      <MainApp />
+    </AppContainer>,
+    document.getElementById('app')
+  )
+}
+
+main(App)
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const App = require('./App').default
-    render(
-      <AppContainer>
-        <App />
-      </AppContainer>,
-      document.getElementById('app')
-    )
-  })
+  module.hot.accept('./App', () => { main(App) })
 }

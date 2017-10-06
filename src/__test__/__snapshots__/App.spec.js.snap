@@ -3,13 +3,13 @@
 exports[`App Component should correct rendered. 1`] = `
 Array [
   <input
-    className="sc-bxivhb xxaXh"
+    className="sc-bxivhb kYjmzu"
     onChange={[Function]}
     placeholder="Search"
     value=""
   />,
   <ul
-    className="sc-htpNat flqtFs"
+    className="sc-htpNat jClnHm"
   >
     <li
       className="sc-bwzfXH gOqXhy"
@@ -68,7 +68,7 @@ exports[`App Component should render a only Cars 3 1`] = `
     value="Cars"
   >
     <input
-      className="sc-bxivhb xxaXh"
+      className="sc-bxivhb kYjmzu"
       onChange={[Function]}
       placeholder="Search"
       value="Cars"
@@ -86,7 +86,7 @@ exports[`App Component should render a only Cars 3 1`] = `
     }
   >
     <MoiveList
-      className="sc-htpNat flqtFs"
+      className="sc-htpNat jClnHm"
       moives={
         Array [
           Object {
@@ -97,7 +97,7 @@ exports[`App Component should render a only Cars 3 1`] = `
       }
     >
       <ul
-        className="sc-htpNat flqtFs"
+        className="sc-htpNat jClnHm"
       >
         <Styled(MoiveItem)
           emoji="🚘 🚘 🚘"

@@ -3,7 +3,20 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'eval',
+  devServer: {
+    hot: true,
+    quiet: false, // display nothing to the console
+    publicPath: '/',
+    // options for formatting the statistics
+    stats: {
+      colors: true,
+      modules: false
+    },
+    watchOptions: {
+      ignored: /node_modules/
+    }
+  },
   entry: {
     app: [
       'babel-polyfill',
@@ -25,14 +38,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        use: [
-          'eslint-loader'
-        ],
-        enforce: 'pre',
-        include: path.resolve(__dirname, 'src')
-      },
       {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),

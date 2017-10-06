@@ -22,7 +22,8 @@ class MoiveList extends PureComponent<Props> {
 }
 
 export default styled(MoiveList)`
-  width: 980px;
+  max-width: 980px;
+  width: 100%;
   padding: 0;
   margin: auto;
 `

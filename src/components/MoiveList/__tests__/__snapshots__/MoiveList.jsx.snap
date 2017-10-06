@@ -2,7 +2,7 @@
 
 exports[`MoiveList component should render correctly 1`] = `
 <MoiveList
-  className="sc-htpNat flqtFs"
+  className="sc-htpNat jClnHm"
   moives={
     Array [
       Object {
