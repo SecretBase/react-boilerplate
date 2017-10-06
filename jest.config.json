@@ -4,6 +4,8 @@
     "js",
     "json"
   ],
+  "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.js",
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
   "moduleNameMapper": {
     "^.*\\.(css|scss|sass)$": "identity-obj-proxy"
   },

@@ -40,24 +40,14 @@ class App extends PureComponent<Props, State> {
     query: ''
   }
 
-  filterMovies = () => {
+  onChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState(() => {
       return {
-        moives: getMoives()
-      }
-    })
-  }
-
-  onChange = (event: Event) => {
-    const {target} = event
-    if (!(target instanceof global.HTMLInputElement)) return
-    this.setState(() => {
-      return {
-        query: target.value,
+        query: event.target.value,
         moives: getMoives()
           .filter(moive => moive.name
             .toLowerCase()
-            .includes(target.value.toLowerCase()))
+            .includes(event.target.value.toLowerCase()))
       }
     })
   }

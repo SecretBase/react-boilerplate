@@ -1,6 +1,9 @@
 import React from 'react'
-import App from '../App'
+import {mount} from 'enzyme'
 import renderer from 'react-test-renderer'
+
+import App, {getMoives} from '../App'
+import Input from '../components/Input'
 
 describe('App Component', () => {
   it('should correct rendered.', () => {
@@ -8,5 +11,28 @@ describe('App Component', () => {
 
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
+  })
+
+  it('should return a moives list', () => {
+    expect(getMoives()).toMatchSnapshot()
+  })
+
+  it('should render a only Cars 3', () => {
+    const wrapper = mount(
+      <App />
+    )
+
+    wrapper.setState((prev) => {
+      return {
+        ...prev,
+        query: 'Cars'
+      }
+    })
+
+    const input = wrapper.find(Input)
+
+    input.simulate('change')
+
+    expect(wrapper).toMatchSnapshot()
   })
 })

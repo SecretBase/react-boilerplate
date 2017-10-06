@@ -1,50 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App Component should correct rendered. 1`] = `
-<div>
-  <h1
-    className="title title--blue text-muted"
-  >
-    Hello World
-  </h1>
-  <h2
-    className="h1 title--red"
-  >
-    Heading 2
-  </h2>
-  <h2
-    className="h2"
-  >
-    Heading 2
-  </h2>
-  <h2
-    className="h3"
-  >
-    Heading 2
-  </h2>
-  <p
-    className="desscription"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+Array [
+  <input
+    className="sc-bxivhb xxaXh"
+    onChange={[Function]}
+    placeholder="Search"
+    value=""
+  />,
   <ul
-    className="list"
+    className="sc-htpNat flqtFs"
   >
     <li
-      className="item"
+      className="sc-bdVaJa kmQhNa"
     >
-      User 1
+       
+      🕷 👦🏻
+       
+      <span
+        className="sc-bwzfXH hXzJNw"
+      >
+        Spider Man
+      </span>
+       
     </li>
     <li
-      className="item"
+      className="sc-bdVaJa kmQhNa"
     >
-      User 2
+       
+      ❄️ 👗
+       
+      <span
+        className="sc-bwzfXH hXzJNw"
+      >
+        Frozen
+      </span>
+       
     </li>
     <li
-      className="item"
+      className="sc-bdVaJa kmQhNa"
     >
-      User 3
+       
+      🚘 🚘 🚘
+       
+      <span
+        className="sc-bwzfXH hXzJNw"
+      >
+        Cars 3
+      </span>
+       
     </li>
-  </ul>
-</div>
+    <li
+      className="sc-bdVaJa kmQhNa"
+    >
+       
+      ❄️ 👗 ✌️
+       
+      <span
+        className="sc-bwzfXH hXzJNw"
+      >
+        Frozen 2
+      </span>
+       
+    </li>
+    <li
+      className="sc-bdVaJa kmQhNa"
+    >
+       
+      👦🏻 👓 ⚡️
+       
+      <span
+        className="sc-bwzfXH hXzJNw"
+      >
+        Harry Potter
+      </span>
+       
+    </li>
+  </ul>,
+]
+`;
+
+exports[`App Component should render a only Cars 3 1`] = `
+<App>
+  <Input
+    key="input"
+    onChange={[Function]}
+    placeholder="Search"
+    value="Cars"
+  >
+    <styled.input
+      onChange={[Function]}
+      placeholder="Search"
+      value="Cars"
+    >
+      <input
+        className="sc-bxivhb xxaXh"
+        onChange={[Function]}
+        placeholder="Search"
+        value="Cars"
+      />
+    </styled.input>
+  </Input>
+  <MoiveList
+    key="moiveList"
+    moives={
+      Array [
+        Object {
+          "emoji": "🚘 🚘 🚘",
+          "name": "Cars 3",
+        },
+      ]
+    }
+  >
+    <styled.ul>
+      <ul
+        className="sc-htpNat flqtFs"
+      >
+        <MoiveItem
+          emoji="🚘 🚘 🚘"
+          key="Cars 3"
+          name="Cars 3"
+        >
+          <styled.li>
+            <li
+              className="sc-bdVaJa kmQhNa"
+            >
+               
+              🚘 🚘 🚘
+               
+              <styled.span>
+                <span
+                  className="sc-bwzfXH hXzJNw"
+                >
+                  Cars 3
+                </span>
+              </styled.span>
+               
+            </li>
+          </styled.li>
+        </MoiveItem>
+      </ul>
+    </styled.ul>
+  </MoiveList>
+</App>
+`;
+
+exports[`App Component should return a moives list 1`] = `
+Array [
+  Object {
+    "emoji": "🕷 👦🏻",
+    "name": "Spider Man",
+  },
+  Object {
+    "emoji": "❄️ 👗",
+    "name": "Frozen",
+  },
+  Object {
+    "emoji": "🚘 🚘 🚘",
+    "name": "Cars 3",
+  },
+  Object {
+    "emoji": "❄️ 👗 ✌️",
+    "name": "Frozen 2",
+  },
+  Object {
+    "emoji": "👦🏻 👓 ⚡️",
+    "name": "Harry Potter",
+  },
+]
 `;
