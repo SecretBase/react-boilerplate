@@ -1,27 +1,27 @@
 // @flow
 import React, {PureComponent} from 'react'
 import styled from 'styled-components'
-import MoiveItem from './MoiveItem'
-import type {Moive} from './MoiveItem'
+import MovieItem from './MovieItem'
+import type {Movie} from './MovieItem'
 
-export type Moives = Array<Moive>
+export type Movies = Array<Movie>
 
 type Props = {
-  moives: Moives,
+  movies: Movies,
   className: string
 }
 
-class MoiveList extends PureComponent<Props> {
+class MovieList extends PureComponent<Props> {
   render () {
     return (
       <ul className={this.props.className}>
-        {this.props.moives.map(moive => <MoiveItem key={moive.name} {...moive} />)}
+        {this.props.movies.map(moive => <MovieItem key={moive.name} {...moive} />)}
       </ul>
     )
   }
 }
 
-export default styled(MoiveList)`
+export default styled(MovieList)`
   max-width: 980px;
   width: 100%;
   padding: 0;

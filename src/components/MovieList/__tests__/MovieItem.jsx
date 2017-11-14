@@ -2,16 +2,16 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import MoiveItem from '../MoiveItem'
+import MovieItem from '../MovieItem'
 
-describe('MoiveItem component', () => {
+describe('MovieItem component', () => {
   it('should render correctly', () => {
     const props = {
       name: 'Hello',
       emoji: 'World'
     }
     const wrapper = shallow(
-      <MoiveItem {...props} />
+      <MovieItem {...props} />
     )
     expect(wrapper).toMatchSnapshot()
   })

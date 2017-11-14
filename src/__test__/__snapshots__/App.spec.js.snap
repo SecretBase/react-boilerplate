@@ -74,9 +74,9 @@ exports[`App Component should render a only Cars 3 1`] = `
       value="Cars"
     />
   </styled.input>
-  <Styled(MoiveList)
+  <Styled(MovieList)
     key="moiveList"
-    moives={
+    movies={
       Array [
         Object {
           "emoji": "🚘 🚘 🚘",
@@ -85,9 +85,9 @@ exports[`App Component should render a only Cars 3 1`] = `
       ]
     }
   >
-    <MoiveList
+    <MovieList
       className="sc-htpNat jClnHm"
-      moives={
+      movies={
         Array [
           Object {
             "emoji": "🚘 🚘 🚘",
@@ -99,12 +99,12 @@ exports[`App Component should render a only Cars 3 1`] = `
       <ul
         className="sc-htpNat jClnHm"
       >
-        <Styled(MoiveItem)
+        <Styled(MovieItem)
           emoji="🚘 🚘 🚘"
           key="Cars 3"
           name="Cars 3"
         >
-          <MoiveItem
+          <MovieItem
             className="sc-bwzfXH gOqXhy"
             emoji="🚘 🚘 🚘"
             name="Cars 3"
@@ -122,11 +122,11 @@ exports[`App Component should render a only Cars 3 1`] = `
                 </span>
               </styled.span>
             </li>
-          </MoiveItem>
-        </Styled(MoiveItem)>
+          </MovieItem>
+        </Styled(MovieItem)>
       </ul>
-    </MoiveList>
-  </Styled(MoiveList)>
+    </MovieList>
+  </Styled(MovieList)>
 </App>
 `;
 

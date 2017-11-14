@@ -1,17 +1,17 @@
 // @flow
 import React, { PureComponent } from 'react'
 
-import MoiveList from './components/MoiveList'
-import type {Moives} from './components/MoiveList'
+import MovieList from './components/MovieList'
+import type {Movies} from './components/MovieList'
 import Input from './components/Input'
 
 type Props = {}
 type State = {
-  moives: Moives,
+  movies: Movies,
   query: string
 }
 
-export const getMoives = (): Moives => [
+export const getMovies = (): Movies => [
   {
     name: 'Spider Man',
     emoji: '🕷 👦🏻'
@@ -32,7 +32,7 @@ export const getMoives = (): Moives => [
 
 class App extends PureComponent<Props, State> {
   state = {
-    moives: getMoives(),
+    movies: getMovies(),
     query: ''
   }
 
@@ -41,7 +41,7 @@ class App extends PureComponent<Props, State> {
     this.setState(() => {
       return {
         query: target.value,
-        moives: getMoives()
+        movies: getMovies()
           .filter(moive => moive.name
             .toLowerCase()
             .includes(target.value.toLowerCase()))
@@ -57,8 +57,8 @@ class App extends PureComponent<Props, State> {
         key='input'
         value={this.state.query}
       />,
-      <MoiveList
-        moives={this.state.moives}
+      <MovieList
+        movies={this.state.movies}
         key='moiveList'
       />
     ]

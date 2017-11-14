@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MoiveList component should render correctly 1`] = `
-<MoiveList
+<MovieList
   className="sc-htpNat jClnHm"
   moives={
     Array [

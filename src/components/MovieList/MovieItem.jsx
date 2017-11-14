@@ -3,13 +3,13 @@ import React, {PureComponent} from 'react'
 import styled from 'styled-components'
 import {lighten} from 'polished'
 
-export type Moive = {
+export type Movie = {
   name: string,
   emoji: string,
   className?: string
 }
 
-type Props = Moive
+type Props = Movie
 
 const PaleText = styled.span`
   font-size: 16px;
@@ -19,7 +19,7 @@ const PaleText = styled.span`
   }
 `
 
-class MoiveItem extends PureComponent<Props> {
+class MovieItem extends PureComponent<Props> {
   render () {
     return (
       <li className={this.props.className}>{this.props.emoji} <PaleText>{this.props.name}</PaleText></li>
@@ -27,7 +27,7 @@ class MoiveItem extends PureComponent<Props> {
   }
 }
 
-export default styled(MoiveItem)`
+export default styled(MovieItem)`
   list-style-type: none;
   margin-bottom: 16px;
   font-size: 24px;

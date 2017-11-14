@@ -2,7 +2,7 @@ import React from 'react'
 import {mount} from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import App, {getMoives} from '../App'
+import App, {getMovies} from '../App'
 import Input from '../components/Input'
 
 describe('App Component', () => {
@@ -14,7 +14,7 @@ describe('App Component', () => {
   })
 
   it('should return a list of movies', () => {
-    expect(getMoives()).toMatchSnapshot()
+    expect(getMovies()).toMatchSnapshot()
   })
 
   it('should render a only Cars 3', () => {
