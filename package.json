@@ -55,7 +55,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.4",
     "node-sass": "^4.5.2",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.0",
     "postcss-loader": "^2.0.0",
     "prop-types": "^15.5.9",
     "react": "^16.0.0",
